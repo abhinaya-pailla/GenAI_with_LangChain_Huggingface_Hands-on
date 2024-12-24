@@ -1,0 +1,5 @@
+1) Open the AWS Sagemaker, click to create domain and some users are created by default.
+
+2) from there go to studio and there create a jupyter space with name " sagemaker" and give instance to ml.m5 2X large ( based on the selection price may vary ),and give storage to 10 GB and click on run space. 
+
+3) after done, click on open jupyter lab and write the code there and execute it. then deployment is done. end point is created in the sagemaker which can be checked.

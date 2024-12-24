@@ -1,0 +1,35 @@
+1) open Lambda in AWS, Create a function ( awsappwithbedrock ) with runtime python 3.12, then go to configuration and set run time to 3 mins.
+
+2) in VSCode write the code and copy the code and paste in created function ( awsappwithbedrock)and click on deploy.
+
+3) Create a folder named "BOTO3_LAYER" and create a python folder in it.and use " pip install boto3 -t python/ "to install boto3 in python library.after the installation,create a 
+zip folder of python and rename it to boto3_layer.zip.
+
+4) go to lambda and click on create a layer and give name ( boto3_bedrock ) and upload the zip file created above and give the python versions 3.10,3.11,3.12 to be compatible
+and create the layer.
+
+5) now go to 'awsappwithbedrock' and click on add layer and click on custom layer,give the created 'boto3_bedrock' layer and version -1 and add the later.
+
+6)Go to API Gateway in AWS , click on HTTP API's build,give the name ' bedrockapi 'and create.add the routes with POST and blog_generation details and create.then click on POST and
+click on attach integration.choose the integration as Lambda and choose the above created awsappwithbedrock function name in the relevant field and create.
+
+7) click on stages and create a stage with name dev.and copy the url and deploy it.
+
+8) create a bucket with the name 'awsbedrock25'( name should be as mentioned in the code ).
+
+9) copy the url created in dev stage and /blog_generation ,combine both and give them in postman and write body with 
+
+{ 
+"blog_topic": "Generative AI "
+}
+
+and Click SEND 
+
+10) in aws Lambda,go to monitor amd click on view watchcloud logs( there u can see whether out.
+
+errors ( if no output generated )
+
+11) in lambda,go to configuration,go to permissions and click on the link role name and give admin role.then go to postman and again click the send button and then  go to logs to check 
+the o/p ( o/p log will be created ).
+
+12) go to S3 bucket,click on the created bucket,u will find the o/p and download it to the local folder.
