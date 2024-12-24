@@ -4,3 +4,4 @@ ft
 graphdb
 nvidia
 venv
+.env
